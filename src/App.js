@@ -1,7 +1,9 @@
 import React,{Fragment,useState,useEffect} from 'react';
 import Header from './Components/Header';
 import Formulario from './Components/Formulario'
+import Noticia from './Components/ListadoNoticias'
 import axios from 'axios';
+import ListadoNoticias from './Components/ListadoNoticias';
 
 
 function App() {
@@ -17,7 +19,7 @@ function App() {
     {
       const url=`http://newsapi.org/v2/top-headlines?country=ar&category=${categoria}&apiKey=8d41418175fa4f36beab2694ddc40a74`;
       const noticias = await axios.get(url);
-      console.log(noticias.data.articles);
+      guardarNoticias(noticias.data.articles);
      
     }
     consultarApi();
@@ -30,7 +32,9 @@ function App() {
       <Header titulo="Buscador de Noticias"/>
       <div className="container white">
         <Formulario guardarCategoria={guardarCategoria}/>
+        <ListadoNoticias noticias={noticias}/>
       </div>
+     
     
     </Fragment>
   );

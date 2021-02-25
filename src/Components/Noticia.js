@@ -23,7 +23,7 @@ const Noticia = ({noticia}) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="waves-effect waves-light btn"
-                    >Ver noticia completa</a>
+                    >Ver noticia completA</a>
                 </div>
                 
             </div>
